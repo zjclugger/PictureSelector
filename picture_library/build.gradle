@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    api 'zjclugger.JCrop:ucrop:v1.0'
+    api 'com.github.zjclugger.JCrop:ucrop:1.0.1'
 
     //noinspection GradleCompatible
     implementation "com.android.support:appcompat-v7:${cfgs.androidSupportVersion}"
@@ -47,10 +47,10 @@ dependencies {
 publish {
     repoName = 'maven'  //repo name default is maven
     userOrg = 'zjclugger'  //bintray username
-    groupId = 'zjclugger.PictureSelector'  //compile part 1
+    groupId = 'com.github.zjclugger.PictureSelector'  //compile part 1
     artifactId = 'picture_library'  //module name compile part 2
     //base on com.github.LuckSiege.PictureSelector:picture_library:v2.2.3
-    publishVersion = 'v1.0'  //version code,compile part 3
+    publishVersion = '1.0.1'  //version code,compile part 3
     desc = 'Base on com.github.LuckSiege.PictureSelector picture_library v2.2.3'
     website = 'https://github.com/zjclugger/PictureSelector' //github
 }
