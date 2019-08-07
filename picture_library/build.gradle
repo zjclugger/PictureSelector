@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion cfgs.compileSdkVersion
@@ -15,6 +16,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,13 +29,29 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':ucrop')
+    api 'zjclugger.JCrop:ucrop:v1.0'
+
     //noinspection GradleCompatible
-    compile "com.android.support:appcompat-v7:${cfgs.androidSupportVersion}"
+    implementation "com.android.support:appcompat-v7:${cfgs.androidSupportVersion}"
     //noinspection GradleCompatible
-    compile "com.android.support:recyclerview-v7:${cfgs.androidSupportVersion}"
-    compile "com.github.bumptech.glide:glide:${cfgs.glide}"
-    compile "io.reactivex.rxjava2:rxjava:${cfgs.rxjava}"
-    compile "io.reactivex.rxjava2:rxandroid:${cfgs.rxandroid}"
+    implementation "com.android.support:recyclerview-v7:${cfgs.androidSupportVersion}"
+    implementation "com.github.bumptech.glide:glide:${cfgs.glide}"
+    implementation "io.reactivex.rxjava2:rxjava:${cfgs.rxjava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${cfgs.rxandroid}"
+
+    implementation "com.android.support:design:${cfgs.androidSupportVersion}"
+    implementation "com.android.support:exifinterface:${cfgs.androidSupportVersion}"
+    implementation "com.squareup.okhttp3:okhttp:${cfgs.okhttp}"
 }
+
+publish {
+    repoName = 'maven'  //repo name default is maven
+    userOrg = 'zjclugger'  //bintray username
+    groupId = 'zjclugger.PictureSelector'  //compile part 1
+    artifactId = 'picture_library'  //module name compile part 2
+    //base on com.github.LuckSiege.PictureSelector:picture_library:v2.2.3
+    publishVersion = 'v1.0'  //version code,compile part 3
+    desc = 'Base on com.github.LuckSiege.PictureSelector picture_library v2.2.3'
+    website = 'https://github.com/zjclugger/PictureSelector' //github
+}
+

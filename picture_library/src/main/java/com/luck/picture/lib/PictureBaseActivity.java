@@ -289,9 +289,9 @@ public class PictureBaseActivity extends FragmentActivity {
         options.setCircleDimmedLayer(config.circleDimmedLayer);
         options.setShowCropFrame(config.showCropFrame);
         options.setShowCropGrid(config.showCropGrid);
-        options.setDragFrameEnabled(config.isDragFrame);
+       /* options.setDragFrameEnabled(config.isDragFrame);
         options.setScaleEnabled(config.scaleEnabled);
-        options.setRotateEnabled(config.rotateEnabled);
+        options.setRotateEnabled(config.rotateEnabled);*/
         options.setCompressionQuality(config.cropCompressQuality);
         options.setHideBottomControls(config.hideBottomControls);
         options.setFreeStyleCropEnabled(config.freeStyleCropEnabled);
