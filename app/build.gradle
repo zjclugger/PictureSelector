@@ -26,7 +26,7 @@ android {
 
 dependencies {
     //implementation project(path: ':picture_library')
-    implementation 'zjclugger.PictureSelector:picture_library:v1.0'
+    implementation 'com.zjclugger.pictureselector:PictureLibrary:1.0.3'
 
     implementation "com.android.support:appcompat-v7:${cfgs.androidSupportVersion}"
     implementation "com.android.support:recyclerview-v7:${cfgs.androidSupportVersion}"
